@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Albatross Must Fly — A Roleplay Scenario on Singapore's Separation, 1965</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap');
+
+  :root {
+    --cream: #FAF6EF;
+    --parchment: #F0E9D6;
+    --ink: #1C1810;
+    --warm-brown: #5C3D1E;
+    --muted-red: #8B2020;
+    --gold: #B8860B;
+    --dark-gold: #8B6914;
+    --slate: #3D4A5C;
+    --pale-blue: #E8EFF7;
+    --pale-green: #E8F2E8;
+    --pale-amber: #FDF3DC;
+    --pale-red: #FBE8E8;
+    --divider: #C4A96A;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--cream);
+    color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 16px;
+    line-height: 1.75;
+    padding: 0;
+  }
+
+  /* ── COVER ── */
+  .cover {
+    background: linear-gradient(160deg, #1A1208 0%, #2E1A0A 40%, #1C2A1C 100%);
+    color: #E8D8B0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 40%, rgba(184,134,11,0.12) 0%, transparent 65%);
+  }
+  .cover-tag {
+    font-family: 'Source Serif 4', serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    opacity: 0.9;
+  }
+  .cover h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 58px);
+    font-weight: 700;
+    line-height: 1.15;
+    color: #F0E2B8;
+    margin-bottom: 18px;
+    max-width: 700px;
+  }
+  .cover h1 em {
+    color: var(--gold);
+    font-style: italic;
+  }
+  .cover-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(14px, 2vw, 20px);
+    font-style: italic;
+    color: #C4A96A;
+    margin-bottom: 40px;
+    max-width: 540px;
+  }
+  .cover-ornament {
+    color: var(--gold);
+    font-size: 28px;
+    margin: 12px 0 28px;
+    letter-spacing: 10px;
+    opacity: 0.7;
+  }
+  .cover-meta {
+    font-size: 13px;
+    color: #A09070;
+    max-width: 520px;
+    line-height: 1.6;
+  }
+  .cover-date {
+    margin-top: 40px;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #6A7A60;
+  }
+
+  /* ── PAGE LAYOUT ── */
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 60px 50px;
+  }
+
+  /* ── SECTION HEADERS ── */
+  .section-divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 56px 0 32px;
+  }
+  .section-divider::before,
+  .section-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--divider);
+    opacity: 0.5;
+  }
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--dark-gold);
+    white-space: nowrap;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--warm-brown);
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+  h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--slate);
+    margin: 32px 0 12px;
+    font-style: italic;
+  }
+  h4 {
+    font-family: 'Source Serif 4', serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--dark-gold);
+    margin: 24px 0 8px;
+  }
+  p { margin-bottom: 14px; }
+
+  /* ── INTRO BOX ── */
+  .intro-box {
+    background: var(--parchment);
+    border-left: 4px solid var(--gold);
+    border-radius: 2px 6px 6px 2px;
+    padding: 24px 28px;
+    margin: 28px 0;
+    font-style: italic;
+    color: #3A3020;
+    font-size: 15px;
+  }
+
+  /* ── CHARACTER CARDS ── */
+  .character-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 24px;
+    margin: 28px 0;
+  }
+  .character-card {
+    border: 1px solid #D4C098;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .character-card-header {
+    padding: 16px 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .char-lky .character-card-header { background: #2E1A0A; color: #F0E2B8; }
+  .char-goh .character-card-header { background: #1A2E2A; color: #D8ECD8; }
+  .char-tunku .character-card-header { background: #1A1A2E; color: #D8D8F0; }
+  .char-razak .character-card-header { background: #2A1A2E; color: #EDD8F0; }
+  .char-toh .character-card-header { background: #2E2010; color: #F0E8D8; }
+  .char-raja .character-card-header { background: #0A2020; color: #D0ECF0; }
+
+  .character-card-header .role {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    font-family: 'Source Serif 4', serif;
+    font-style: normal;
+    margin-top: 4px;
+  }
+  .character-card-body {
+    padding: 16px 20px;
+    background: white;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+  .character-card-body strong { color: var(--warm-brown); }
+
+  /* ── SCENE BLOCKS ── */
+  .scene {
+    margin: 48px 0;
+    border: 1px solid #D4C098;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .scene-header {
+    background: linear-gradient(135deg, #2C1F0A, #1A2C1A);
+    color: #E8D8A8;
+    padding: 20px 28px;
+  }
+  .scene-number {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .scene-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+  .scene-context {
+    font-size: 13px;
+    color: #B0A080;
+    margin-top: 8px;
+    font-style: italic;
+  }
+  .scene-body {
+    padding: 24px 28px;
+    background: #FDFAF4;
+  }
+
+  /* ── STAGE DIRECTIONS ── */
+  .stage-dir {
+    font-style: italic;
+    color: #6B5E3E;
+    font-size: 14px;
+    margin: 10px 0 16px;
+    padding-left: 16px;
+    border-left: 2px solid #D4C098;
+  }
+
+  /* ── DIALOGUE ── */
+  .dialogue {
+    margin: 18px 0;
+  }
+  .speaker {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .speaker.lky { color: #7A3A10; }
+  .speaker.goh { color: #1A5C2A; }
+  .speaker.tunku { color: #2A2A7A; }
+  .speaker.razak { color: #5A1A7A; }
+  .speaker.toh { color: #7A5A10; }
+  .speaker.raja { color: #105A5A; }
+
+  .line {
+    background: white;
+    border: 1px solid #E8E0CC;
+    border-radius: 6px;
+    padding: 14px 18px;
+    font-size: 15px;
+    line-height: 1.7;
+    position: relative;
+  }
+  .line.lky { border-left: 4px solid #8B3A10; }
+  .line.goh { border-left: 4px solid #1A7A3A; }
+  .line.tunku { border-left: 4px solid #3A3AAA; }
+  .line.razak { border-left: 4px solid #7A2AAA; }
+  .line.toh { border-left: 4px solid #AA7A10; }
+  .line.raja { border-left: 4px solid #107A7A; }
+
+  .emotion-tag {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 8px;
+    vertical-align: middle;
+    font-family: 'Source Serif 4', serif;
+  }
+  .emotion-tag.anguish { background: #FBE8E8; color: #8B2020; }
+  .emotion-tag.resolve { background: #E8F2E8; color: #1A5A1A; }
+  .emotion-tag.reluctant { background: #E8EFF7; color: #1A2A6A; }
+  .emotion-tag.grief { background: #F5E8FB; color: #5A1A7A; }
+  .emotion-tag.betrayal { background: #FDF3DC; color: #7A5A10; }
+  .emotion-tag.shock { background: #FBE8E8; color: #7A1A1A; }
+  .emotion-tag.pragmatic { background: #E8F5F5; color: #0A5050; }
+  .emotion-tag.weary { background: #F0EDE8; color: #5A4A30; }
+
+  /* ── REFLECTION BOX ── */
+  .reflection {
+    background: var(--pale-amber);
+    border: 1px solid #D4B060;
+    border-radius: 6px;
+    padding: 20px 24px;
+    margin: 24px 0;
+  }
+  .reflection-title {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--dark-gold);
+    margin-bottom: 10px;
+  }
+  .reflection p { font-size: 14px; margin-bottom: 8px; }
+  .reflection ul { padding-left: 20px; font-size: 14px; }
+  .reflection ul li { margin-bottom: 6px; }
+
+  /* ── FACILITATOR NOTES ── */
+  .facilitator-box {
+    background: var(--pale-blue);
+    border: 1px solid #9AB0D0;
+    border-radius: 6px;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 14px;
+  }
+  .facilitator-box .ftitle {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--slate);
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .facilitator-box ul { padding-left: 18px; }
+  .facilitator-box ul li { margin-bottom: 6px; }
+
+  /* ── SECRET DOCUMENT PROP ── */
+  .document-prop {
+    background: #FFFCE8;
+    border: 2px solid #C4A040;
+    border-radius: 4px;
+    padding: 24px 28px;
+    margin: 24px 0;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.8;
+    position: relative;
+  }
+  .document-prop::before {
+    content: "⬜ CLASSIFIED — ALBATROSS FILE";
+    display: block;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--muted-red);
+    margin-bottom: 14px;
+    border-bottom: 1px dashed #C4A040;
+    padding-bottom: 10px;
+  }
+  .document-prop .doc-date { color: #666; font-size: 12px; margin-bottom: 8px; }
+  .document-prop .doc-body { color: #2A1A00; }
+  .document-prop .doc-sig { margin-top: 20px; color: #1A3A1A; font-style: italic; }
+
+  /* ── TIMELINE ── */
+  .timeline {
+    margin: 28px 0;
+    padding: 0;
+    list-style: none;
+  }
+  .timeline li {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 16px;
+    align-items: flex-start;
+    font-size: 14px;
+  }
+  .timeline-date {
+    min-width: 90px;
+    font-weight: 600;
+    color: var(--warm-brown);
+    font-family: 'Playfair Display', serif;
+  }
+  .timeline-event { color: var(--ink); }
+
+  /* ── VOCABULARY ── */
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+    margin: 16px 0;
+  }
+  .vocab-item {
+    background: white;
+    border: 1px solid #D4C098;
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+  .vocab-item strong { color: var(--warm-brown); display: block; margin-bottom: 4px; }
+
+  /* ── ASSESSMENT TABLE ── */
+  table.assess {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  table.assess th {
+    background: var(--warm-brown);
+    color: white;
+    padding: 10px 14px;
+    text-align: left;
+    font-family: 'Source Serif 4', serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  table.assess td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #E0D4B0;
+    vertical-align: top;
+  }
+  table.assess tr:nth-child(even) td { background: #FAF6EF; }
+
+  /* ── FOOTER ── */
+  .doc-footer {
+    margin-top: 80px;
+    padding: 28px 0 40px;
+    border-top: 1px solid var(--divider);
+    text-align: center;
+    font-size: 12px;
+    color: #8A7A60;
+    font-style: italic;
+  }
+
+  @media print {
+    .cover { min-height: auto; padding: 40px; page-break-after: always; }
+    .scene { page-break-inside: avoid; }
+    .character-card { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-tag">Immersive Historical Roleplay — Singapore History</div>
+  <h1>The <em>Albatross</em> Must Fly</h1>
+  <div class="cover-subtitle">A Roleplay Scenario on Singapore's Separation from Malaysia, 1964–1965</div>
+  <div class="cover-ornament">✦ ✦ ✦</div>
+  <div class="cover-meta">
+    Drawn from the declassified Albatross File compiled by Dr Goh Keng Swee, this scenario places learners inside the secret negotiations, difficult choices, and profound emotions that shaped the birth of modern Singapore.
+  </div>
+  <div class="cover-date">9 August 1965 · Independence Day</div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="page">
+
+  <!-- ═══════════════════════════════════════ SECTION: OVERVIEW -->
+  <div class="section-divider"><span class="section-label">Overview &amp; Context</span></div>
+  <h2>About This Roleplay</h2>
+
+  <div class="intro-box">
+    "Now I am going to let you into what has been a state secret up to now. This is a file, which I call <strong>Albatross</strong>."
+    <br>— Dr Goh Keng Swee, 1980, referring to his secret file of negotiations with Malaysia
+  </div>
+
+  <p>On 9 August 1965, Singapore became an independent nation — not through triumphant revolution, but through painful, secret negotiation. The <strong>Albatross File</strong>, compiled by Finance Minister Goh Keng Swee and declassified in 2025, reveals that separation was not the sudden, unilateral expulsion many believed. Instead, both sides spent more than a year quietly preparing for a "clean break," driven by racial tensions, political clashes, and growing economic frustration.</p>
+
+  <p>This roleplay invites learners to step into the shoes of six key figures — to feel the weight of decisions made behind closed doors, the grief of abandoned dreams, and the pragmatic courage required to found a nation against all odds.</p>
+
+  <h4>Learning Objectives</h4>
+  <ul style="padding-left:22px; font-size:15px; margin-bottom:16px;">
+    <li style="margin-bottom:8px;">Understand the events leading to Singapore's separation from Malaysia (1963–1965)</li>
+    <li style="margin-bottom:8px;">Appreciate the <em>emotional and moral complexity</em> faced by leaders on both sides</li>
+    <li style="margin-bottom:8px;">Analyse the significance of the Albatross File in revising the historical narrative</li>
+    <li style="margin-bottom:8px;">Practise perspective-taking, empathy, and evidence-based historical reasoning</li>
+  </ul>
+
+  <h4>Key Historical Timeline</h4>
+  <ul class="timeline">
+    <li><span class="timeline-date">Sept 1963</span><span class="timeline-event">Singapore joins the Federation of Malaysia.</span></li>
+    <li><span class="timeline-date">July 1964</span><span class="timeline-event">Racial riots erupt in Singapore during Prophet Muhammad's birthday procession; tensions between PAP and UMNO escalate sharply.</span></li>
+    <li><span class="timeline-date">Early 1965</span><span class="timeline-event">Lee Kuan Yew authorises Goh Keng Swee to hold secret talks with Malaysian leaders Tun Razak and Dato Ismail.</span></li>
+    <li><span class="timeline-date">May 1965</span><span class="timeline-event">UMNO delegates at their general assembly call for Lee's arrest. Lee campaigns for a "Malaysian Malaysia" — equal rights for all races.</span></li>
+    <li><span class="timeline-date">15 July 1965</span><span class="timeline-event">Goh is summoned to Razak's home in KL. Asked by Razak for ideas to resolve tensions, Goh proposes full separation. Razak does not reject it — he asks Goh to confirm Lee's agreement.</span></li>
+    <li><span class="timeline-date">20 July 1965</span><span class="timeline-event">Goh meets Razak and Ismail again. He confirms Lee is agreeable. Both sides agree: it must be done swiftly, quietly, presented to the British as a fait accompli.</span></li>
+    <li><span class="timeline-date">26 July 1965</span><span class="timeline-event">Lee formally authorises Goh to negotiate "any constitutional rearrangements." Separation documents are drafted in secrecy.</span></li>
+    <li><span class="timeline-date">7 August 1965</span><span class="timeline-event">Lee summons Toh Chin Chye and S. Rajaratnam to KL. They are shown the separation documents for the first time — and initially refuse to sign.</span></li>
+    <li><span class="timeline-date">9 August 1965</span><span class="timeline-event">Malaysia's Parliament passes the separation bill 126–0. Lee announces independence at Caldecott Hill, visibly in tears.</span></li>
+  </ul>
+
+  <!-- ═══════════════════════════════════════ SECTION: CHARACTERS -->
+  <div class="section-divider"><span class="section-label">The Characters</span></div>
+  <h2>Meet the Key Figures</h2>
+  <p>Each player takes on one of these historical figures. Read your character card carefully before the roleplay begins.</p>
+
+  <div class="character-grid">
+
+    <div class="character-card char-lky">
+      <div class="character-card-header">
+        Lee Kuan Yew
+        <span class="role">Prime Minister of Singapore · PAP Founder</span>
+      </div>
+      <div class="character-card-body">
+        <p><strong>Who you are:</strong> You have devoted your entire adult life to the vision of merger — Singapore and Malaya as one united, multiracial nation. Separation feels like a personal failure and a betrayal of everything you fought for.</p>
+        <p><strong>Your dilemma:</strong> You know staying in Malaysia may lead to bloodshed and Singapore's political destruction. But leaving feels like abandoning your people's dream. You must announce independence while weeping inside.</p>
+        <p><strong>Your key emotion:</strong> Grief disguised as composure. Duty overriding heartbreak.</p>
+        <p><strong>Secret burden:</strong> You did not know that Goh had proposed separation directly to Razak — you only learned in 1994. You feel the weight of decisions made on your behalf.</p>
+      </div>
+    </div>
+
+    <div class="character-card char-goh">
+      <div class="character-card-header">
+        Goh Keng Swee
+        <span class="role">Finance Minister of Singapore · The Pragmatist</span>
+      </div>
+      <div class="character-card-body">
+        <p><strong>Who you are:</strong> You are Singapore's economic architect — clear-eyed, unromantic, and ruthlessly pragmatic. Where others see ideals, you see arithmetic. The merger has not delivered the common market you hoped for. It has become, in your words, "an albatross around our necks."</p>
+        <p><strong>Your dilemma:</strong> You initiated the separation talks — even before Lee knew. You believe it is the only rational solution. But you carry the loneliness of a man who made the hardest call in secret.</p>
+        <p><strong>Your key emotion:</strong> Cold resolve, with a private sadness for what could have been.</p>
+        <p><strong>Secret burden:</strong> You named this file "Albatross" — a symbol of a cursed burden. Malaysia was your albatross. Now separation itself may become one.</p>
+      </div>
+    </div>
+
+    <div class="character-card char-tunku">
+      <div class="character-card-header">
+        Tunku Abdul Rahman
+        <span class="role">Prime Minister of Malaysia · The Reluctant Executioner</span>
+      </div>
+      <div class="character-card-body">
+        <p><strong>Who you are:</strong> You are the father of Malaysian independence, a gentle man who values harmony above all. You never wanted Singapore in the Federation — the demographics frightened you — but you accepted it. Now you must undo it.</p>
+        <p><strong>Your dilemma:</strong> You believe separation will protect Malay political supremacy and prevent civil war. But you also respect Lee. You will write him a personal letter urging him to sign, calling separation "absolutely the only way."</p>
+        <p><strong>Your key emotion:</strong> Weary relief mixed with quiet guilt.</p>
+        <p><strong>Secret burden:</strong> You confided in Singapore's Lim Kim San about your wish for separation in June — before Lee even knew. You set this in motion quietly.</p>
+      </div>
+    </div>
+
+    <div class="character-card char-razak">
+      <div class="character-card-header">
+        Tun Abdul Razak Hussein
+        <span class="role">Deputy PM of Malaysia · The Negotiator</span>
+      </div>
+      <div class="character-card-body">
+        <p><strong>Who you are:</strong> You are Malaysia's steady, disciplined number two — the man who does the hard work the Tunku cannot do publicly. In early July, the Tunku wrote to you that Malaysia may "have no choice but to cut out Singapore like gangrene." On July 15, you summon Goh to your home and ask for ideas. What Goh proposes surprises even you.</p>
+        <p><strong>Your dilemma:</strong> You must manage the separation so cleanly that no popular movement — in Malaysia or Singapore — can rise to block it. You agree it must be a fait accompli, hidden from the British until done. Every wavering on your part, Goh reminds you of what Lee could do if he stays.</p>
+        <p><strong>Your key emotion:</strong> Controlled, strategic. You suppress personal feelings for the sake of stability.</p>
+      </div>
+    </div>
+
+    <div class="character-card char-toh">
+      <div class="character-card-header">
+        Toh Chin Chye
+        <span class="role">Deputy PM of Singapore · The Betrayed Idealist</span>
+      </div>
+      <div class="character-card-body">
+        <p><strong>Who you are:</strong> You are a founding father of the PAP, a committed anti-colonialist who believed deeply in the merger. You were kept in the dark — Lee and Goh did not tell you about the secret negotiations. On 7 August, you are handed the documents and told to sign. You feel blindsided and furious.</p>
+        <p><strong>Your dilemma:</strong> You refuse to sign at first. It is only after Tunku's personal letter — and Lee's warning that <em>you</em> will bear responsibility if racial violence follows a failed separation — that you relent.</p>
+        <p><strong>Your key emotion:</strong> Deep sense of betrayal by comrades you trusted with your life.</p>
+      </div>
+    </div>
+
+    <div class="character-card char-raja">
+      <div class="character-card-header">
+        S. Rajaratnam
+        <span class="role">Minister for Culture (Singapore) · Future Foreign Minister · PAP Founding Member</span>
+      </div>
+      <div class="character-card-body">
+        <p><strong>Who you are:</strong> You are Singapore's voice in the public sphere — a journalist-turned-politician, fierce advocate for multiracialism, and a founding PAP member. In 1965, you serve as Minister for Culture. After independence, you will become Singapore's first Foreign Affairs Minister. But on 7 August, you are not yet that man — you are someone who believed deeply in a united Malaysia, and has just been handed documents dissolving it.</p>
+        <p><strong>Your dilemma:</strong> Like Toh, you ultimately sign — not because you agree, but because you see no other path. You will spend the next days crafting Singapore's declaration to the world, finding the words for a nation born from grief.</p>
+        <p><strong>Your key emotion:</strong> Intellectual anguish. The ideas you championed — Malaysian Malaysia — have died with the merger.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════ SECTION: SCENE 1 -->
+  <div class="section-divider"><span class="section-label">Scene One</span></div>
+
+  <div class="scene">
+    <div class="scene-header">
+      <div class="scene-number">Scene 1 of 4</div>
+      <div class="scene-title">The Albatross Around Our Necks</div>
+      <div class="scene-context">Setting: A private room at the Treasury Building, Singapore · Early 1965 · Goh Keng Swee reviews his file before meeting Razak. Lee Kuan Yew arrives unexpectedly.</div>
+    </div>
+    <div class="scene-body">
+
+      <div class="stage-dir">[Goh sits alone at a desk covered in confidential memoranda and handwritten notes. He holds a manila folder. He has written the word "ALBATROSS" on the cover. Lee enters, looking drawn and tired.]</div>
+
+      <div class="dialogue">
+        <div class="speaker lky">Lee Kuan Yew <span class="emotion-tag weary">weary</span></div>
+        <div class="line lky">Keng Swee. You asked to see me. What is in that folder?</div>
+      </div>
+
+      <div class="dialogue">
+        <div class="speaker goh">Goh Keng Swee <span class="emotion-tag pragmatic">pragmatic</span></div>
+        <div class="line goh">I call it the Albatross File. You remember Coleridge — the sailor who killed the bird and was condemned to wear its rotting carcass around his neck as punishment? That is what this merger has become for us. We carry Malaysia, and it is killing us.</div>
+      </div>
+
+      <div class="dialogue">
+        <div class="speaker lky">Lee Kuan Yew <span class="emotion-tag anguish">anguish</span></div>
+        <div class="line lky">Keng Swee, do not be too hasty. We fought for this merger. Our people — Chinese, Malay, Indian — we were supposed to build something together. One nation. If we walk away now, what was it all for?</div>
+      </div>
+
+      <div class="dialogue">
+        <div class="speaker goh">Goh Keng Swee <span class="emotion-tag resolve">resolve</span></div>
+        <div class="line goh">We are not walking away. We are being pushed. The July riots. The UMNO delegates who want you arrested. Razak blocking our common market at every turn. Harry — the arithmetic does not lie. If we stay, there will be blood. If we leave, there may be a future.</div>
+      </div>
+
+      <div class="dialogue">
+        <div class="speaker lky">Lee Kuan Yew <span class="emotion-tag anguish">anguish</span></div>
+        <div class="line lky">And Toh? Rajaratnam? Do you propose we tell them nothing? These are our brothers in arms.</div>
+      </div>
+
+      <div class="dialogue">
+        <div class="speaker goh">Goh Keng Swee <span class="emotion-tag pragmatic">pragmatic</span></div>
+        <div class="line goh">Not yet. The fewer who know, the less likely it leaks. A premature leak would be catastrophic — it would ignite the very chaos we are trying to prevent. I will meet Razak quietly. I need your authorisation to proceed.</div>
+      </div>
+
+      <div class="stage-dir">[A long silence. Lee presses his fingers together, staring at the table.]</div>
+
+      <div class="dialogue">
+        <div class="speaker lky">Lee Kuan Yew <span class="emotion-tag anguish">anguish</span></div>
+        <div class="line lky">You are asking me to authorise the end of a dream I have held since I was a young man. Everything. My whole adult life, Keng Swee. I believed in this. I told Parliament I would be the last man to suggest splitting up Malaysia.</div>
+      </div>
+
+      <div class="dialogue">
+        <div class="speaker goh">Goh Keng Swee <span class="emotion-tag pragmatic">pragmatic</span></div>
+        <div class="line goh">Then let me be that man. Authorise me. You need not be the one who proposes it — only the one who accepts, when the time comes, that there is no other way.</div>
+      </div>
+
+      <div class="stage-dir">[Lee picks up a pen. He hesitates — then writes a brief handwritten authorisation note.]</div>
+
+      <div class="dialogue">
+        <div class="speaker lky">Lee Kuan Yew <span class="emotion-tag resolve">resolve</span></div>
+        <div class="line lky">I authorise Goh Keng Swee to discuss with Tun Razak, Dato Ismail and such other Federal Ministers of comparable authority any proposal for rearrangements of Malaysia. God help us both.</div>
+      </div>
+
+      <div class="reflection">
+        <div class="reflection-title">💬 Pause &amp; Reflect — Scene 1</div>
+        <ul>
+          <li>Why does Goh want to keep the negotiations secret from Toh and Rajaratnam? Do you think this was the right decision?</li>
+          <li>Lee says he has "believed in merger my whole adult life." How does he seem to feel when he signs the authorisation? What does it take to act against your own deepest belief?</li>
+          <li>Goh uses the metaphor of the albatross. What does it tell us about how Singapore's leaders felt about the merger by 1965?</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ SECTION: SCENE 2 -->
+  <div class="section-divider"><span class="section-label">Scene Two</span></div>
+
+  <div class="scene">
+    <div class="scene-header">
+      <div class="scene-number">Scene 2 of 4</div>
+      <div class="scene-title">A Proposal in Kuala Lumpur</div>
+      <div class="scene-context">Setting: Tun Razak's residence, Kuala Lumpur · 15 July 1965 · Goh Keng Swee has been summoned to Razak's home. Razak asks him for ideas to resolve the strained relationship between Singapore and Malaysia. What Goh says next will change history. <em>[Jaffar Albar, UMNO secretary-general, is also present; for clarity, Razak speaks for the group.]</em></div>
+    </div>
+    <div class="scene-body">
+
+      <div class="stage-dir">[Goh arrives at Razak's residence — a private setting, deliberately away from official offices. Razak greets him informally. The atmosphere is tense but not hostile. Both men know the political situation is deteriorating fast.]</div>
+
+      <div class="dialogue">
+        <div class="speaker razak">Tun Abdul Razak <span class="emotion-tag weary">weary</span></div>
+        <div class="line razak">Dr Goh. Thank you for coming. You know the situation as well as I do. The tensions between our parties are not improving. Lee's campaign, the Solidarity Convention — it is causing problems I cannot easily manage. I want to ask you directly: what ideas do you have to tackle this?</div>
+      </div>
+
+      <div class="stage-dir">[Goh pauses. He has been turning this over since his return from medical treatment in Germany. He knows what he is about to say is extraordinary — but he also believes it is the only honest answer.]</div>
+
+      <div class="dialogue">
+        <div class="speaker goh">Goh Keng Swee <span class="emotion-tag resolve">resolve</span></div>
+        <div class="line goh">Tun Razak — the best thing, I think, is to call it quits. Both sides go their separate ways. We leave Malaysia, become an independent state. You will be relieved of all these troubles. And we would also be relieved of troubles from you. All these communal tensions, all this friction — it will be over. We are on our own. You are on your own.</div>
+      </div>
+
+      <div class="stage-dir">[Silence. Razak had not expected this to be Goh's answer.]</div>
+
+      <div class="dialogue">
+        <div class="speaker razak">Tun Abdul Razak <span class="emotion-tag reluctant">cautious</span></div>
+        <div class="line razak">When you say — going your separate ways — what exactly do you mean?</div>
+      </div>
+
+      <div class="dialogue">
+        <div class="speaker goh">Goh Keng Swee <span class="emotion-tag pragmatic">pragmatic</span></div>
+        <div class="line goh">Complete independence. A clean break. Singapore as a sovereign state — not a looser federation, not a confederation. Fully separate. Done swiftly, quietly, and presented to the British as a fait accompli before they can interfere. If we let it drag out, they will put a stop to it.</div>
+      </div>
+
+      <div class="dialogue">
+        <div class="speaker razak">Tun Abdul Razak <span class="emotion-tag reluctant">reluctant</span></div>
+        <div class="line razak">Does Lee know you are saying this?</div>
+      </div>
+
+      <div class="dialogue">
+        <div class="speaker goh">Goh Keng Swee <span class="emotion-tag resolve">resolve</span></div>
+        <div class="line goh">He has authorised me to explore all options. But I will need to speak to him further — he must commit to this. Talk to Lee yourself, Tun Razak. See if he is willing to go along with it.</div>
+      </div>
+
+      <div class="stage-dir">[Razak does not say yes. He does not say no. He asks Goh to sound out Lee. That restraint — that open door — is enough.]</div>
+
+      <div class="dialogue">
+        <div class="speaker razak">Tun Abdul Razak <span class="emotion-tag weary">weary</span></div>
+        <div class="line razak">Whatever happens — this conversation stays between us. If word reaches the public, or the British, before anything is agreed, we lose control entirely.</div>
+      </div>
+
+      <div class="reflection">
+        <div class="reflection-title">💬 Pause &amp; Reflect — Scene 2</div>
+        <ul>
+          <li>Razak asked Goh for ideas — he did not expect separation to be the answer. How do you think he felt hearing it?</li>
+          <li>Goh acted partly on his own conviction here, before Lee had fully committed. Was this the right thing to do?</li>
+          <li>Both men agree the British must not know until it is too late to stop it. What does this tell us about the power dynamics of the era?</li>
+          <li>Goh's documented words: "We're on our own, you're on your own." Is this a sad statement or a hopeful one?</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ SECTION: SCENE 3 -->
+  <div class="section-divider"><span class="section-label">Scene Three</span></div>
+
+  <div class="scene">
+    <div class="scene-header">
+      <div class="scene-number">Scene 3 of 4</div>
+      <div class="scene-title">Brothers, I Have Something to Show You</div>
+      <div class="scene-context">Setting: Temasek House, Kuala Lumpur · 7 August 1965 · The separation agreement was already signed the previous night by Goh, Barker, Razak, Ismail and others. Lee now summons Toh Chin Chye and S. Rajaratnam — two days before independence — to present the done documents. Neither man was told before this moment.</div>
+    </div>
+    <div class="scene-body">
+
+      <div class="stage-dir">[Lee sits at a table. Stacked before him are legal documents — the Separation Agreement, drafts of constitutional amendments, the terms of the water agreement. Toh and Rajaratnam enter, expecting a routine meeting. Lee rises but cannot meet their eyes immediately.]</div>
+
+      <div class="dialogue">
+        <div class="speaker toh">Toh Chin Chye <span class="emotion-tag betrayal">confused</span></div>
+        <div class="line toh">Harry, why did you summon us to KL so suddenly? What is going on? The secrecy — the staff were told nothing.</div>
+      </div>
+
+      <div class="dialogue">
+        <div class="speaker lky">Lee Kuan Yew <span class="emotion-tag anguish">anguish</span></div>
+        <div class="line lky">Sit down. Both of you. Please. What I am about to show you… I need you to hear everything before you react. I owe you that much.</div>
+      </div>
+
+      <div class="stage-dir">[Lee slides the documents across the table. Both men begin reading. Rajaratnam's face drains of colour. Toh sets the papers down and stares straight ahead.]</div>
+
+      <div class="dialogue">
+        <div class="speaker toh">Toh Chin Chye <span class="emotion-tag betrayal">betrayal</span></div>
+        <div class="line toh">Separation. You are proposing — you have <em>already arranged</em> — separation. Harry, we built the PAP together. We marched together, we went to prison together, we negotiated merger together. And you did not tell me? Goh did not tell me?</div>
+      </div>
+
+      <div class="dialogue">
+        <div class="speaker raja">S. Rajaratnam <span class="emotion-tag shock">shock</span></div>
+        <div class="line raja">This is — it signs away the Malaysian Malaysia we have fought for. Everything I have said, every speech I have written, every argument I have made about a multiracial nation — it all becomes void on the ninth of August? You ask me to sign this?</div>
+      </div>
+
+      <div class="dialogue">
+        <div class="speaker lky">Lee Kuan Yew <span class="emotion-tag anguish">anguish</span></div>
+        <div class="line lky">I know. I know what I am asking. And I am sorry — truly sorry — that you were not part of this. The secrecy was necessary. Not because we did not trust you. Because a leak could have cost lives. But that does not make the betrayal feel smaller, and I will not pretend otherwise.</div>
+      </div>
+
+      <div class="dialogue">
+        <div class="speaker toh">Toh Chin Chye <span class="emotion-tag betrayal">betrayal</span></div>
+        <div class="line toh">Do not speak to me of necessity! We are founding fathers. We deserved to be part of this decision. I will not sign.</div>
+      </div>
+
+      <div class="stage-dir">[A heavy silence. Lee picks up a letter — the Tunku has written it directly to Toh — and passes it across the table.]</div>
+
+      <div class="dialogue">
+        <div class="speaker lky">Lee Kuan Yew <span class="emotion-tag resolve">quiet, resolved</span></div>
+        <div class="line lky">The Tunku wrote to you, Chin Chye. He says he himself is not strong enough to exercise complete control of the situation. He says the amicable settlement of our differences in this way is the only possible way out. And I tell you now — if you refuse to sign, I will not proceed. But then you must take responsibility if racial clashes follow.</div>
+      </div>
+
+      <div class="stage-dir">[Toh reads the Tunku's letter in silence. His jaw tightens. Then, slowly, Toh picks up the pen and signs — first. Rajaratnam watches him, then takes the pen.]</div>
+
+      <div class="dialogue">
+        <div class="speaker raja">S. Rajaratnam <span class="emotion-tag grief">grief</span></div>
+        <div class="line raja">[quietly, as he signs] I feel as though I am signing away all that I have ever fought for.</div>
+      </div>
+
+      <div class="dialogue">
+        <div class="speaker toh">Toh Chin Chye <span class="emotion-tag betrayal">exhausted</span></div>
+        <div class="line toh">I have written to the Tunku accepting the expulsion of Singapore. Expulsion — that is the word I used. Not separation. Not independence. Expulsion. Let that be on record.</div>
+      </div>
+
+      <div class="reflection">
+        <div class="reflection-title">💬 Pause &amp; Reflect — Scene 3</div>
+        <ul>
+          <li>How would you feel if you were Toh or Rajaratnam? Was it right to keep them uninformed?</li>
+          <li>Lee says the secrecy was "necessary." Do good ends justify the means of deception, even among trusted colleagues?</li>
+          <li>Rajaratnam signs because he accepts a painful truth about the limits of his ideals. Have you ever had to abandon something you believed in for practical reasons?</li>
+          <li>Toh signs "under protest." What does this act say about loyalty, duty, and personal conviction?</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ SECTION: SCENE 4 -->
+  <div class="section-divider"><span class="section-label">Scene Four</span></div>
+
+  <div class="scene">
+    <div class="scene-header">
+      <div class="scene-number">Scene 4 of 4</div>
+      <div class="scene-title">A Moment of Anguish</div>
+      <div class="scene-context">Setting: Caldecott Hill Broadcasting Studio, Singapore · 9 August 1965, 4:30 p.m. · At 9:30 a.m. the Malaysian Parliament had already passed the separation bill 126–0. Lee Kuan Yew now faces the cameras for a nationally televised press conference. Goh stands just offstage.</div>
+    </div>
+    <div class="scene-body">
+
+      <div class="stage-dir">[The studio lights are harsh. Lee sits before the microphones, suited and composed on the outside. Goh watches from the edge of the room. Lee begins to speak — and his voice cracks almost immediately.]</div>
+
+      <div class="dialogue">
+        <div class="speaker lky">Lee Kuan Yew <span class="emotion-tag anguish">anguish</span></div>
+        <div class="line lky">Every time we look back on this moment when we signed this agreement which severed Singapore from Malaysia, it will be a moment of anguish. For me it is a moment of anguish because all my life… You see, the whole of my adult life… I have believed in Malaysian merger and the unity of these two territories. You know, it's a people connected by geography, economics, and ties of kinship…</div>
+      </div>
+
+      <div class="stage-dir">[He stops. His eyes brim with tears. He turns to the journalists.] </div>
+
+      <div class="dialogue">
+        <div class="speaker lky">Lee Kuan Yew <span class="emotion-tag anguish">breaking</span></div>
+        <div class="line lky">Would you mind if we stop for a while?</div>
+      </div>
+
+      <div class="stage-dir">[A silence that will be replayed for generations. Goh, watching from offstage, does not move. He stares at the floor.]</div>
+
+      <div class="dialogue">
+        <div class="speaker goh">Goh Keng Swee <span class="emotion-tag pragmatic">quiet, private</span></div>
+        <div class="line goh">[To himself] He carries what I could not carry publicly. The Tunku moved the bill this morning — 126 to nothing. It is done. History does not wait for grief. But perhaps grief is the price of having meant it.</div>
+      </div>
+
+      <div class="stage-dir">[Lee collects himself. He looks into the camera. When he speaks again, the grief is still there — but so is steel.]</div>
+
+      <div class="dialogue">
+        <div class="speaker lky">Lee Kuan Yew <span class="emotion-tag resolve">resolve</span></div>
+        <div class="line lky">There is nothing to be worried about. Many things will go on just as usual. We are going to have a multiracial nation in Singapore. We will set the example. This is not a Malay nation; this is not a Chinese nation; this is not an Indian nation. Everybody will have his place: equal; language, culture, religion.</div>
+      </div>
+
+      <div class="reflection">
+        <div class="reflection-title">💬 Pause &amp; Reflect — Scene 4</div>
+        <ul>
+          <li>Lee's press conference tears became one of the most enduring memories in Singapore's modern history. Why do you think they moved people so deeply?</li>
+          <li>The Tunku also carries a burden — quietly. How do his feelings differ from Lee's? Who do you think found separation harder?</li>
+          <li>What does it mean for a leader to show emotion publicly? Is it a strength or a weakness?</li>
+          <li>Lee ends with a vision. Why is it important, in the moment of deepest grief, to articulate a positive future?</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ SECTION: PROP DOCUMENT -->
+  <div class="section-divider"><span class="section-label">Historical Props</span></div>
+  <h2>The Documents</h2>
+  <p>These are adapted excerpts from the actual Albatross File documents, for use as <em>in-roleplay props</em>.</p>
+
+  <div class="document-prop">
+    <div class="doc-date">26 July 1965 · Handwritten Note</div>
+    <div class="doc-body">
+      I authorise Goh Keng Swee to discuss with Tun Razak, Dato Ismail and such other Federal Ministers of comparable authority concerned in these matters in the Central Government any proposal for rearrangements of Malaysia.
+      <br><br>
+      Any premature leak of the substance of these discussions would be detrimental to the scheme now being negotiated. The strictest secrecy must be observed.
+    </div>
+    <div class="doc-sig">— Lee Kuan Yew, Prime Minister of Singapore</div>
+  </div>
+
+  <div class="document-prop">
+    <div class="doc-date">7 August 1965 · Personal Letter from Tunku to Toh Chin Chye</div>
+    <div class="doc-body">
+      Dear Chin Chye,<br><br>
+      I am not strong enough to exercise complete control of the situation and the amicable settlement of our differences in this way is the only possible way out. I ask you to accept this as a final and irrevocable decision. Any further delay will only make things worse. Please sign the agreement.
+    </div>
+    <div class="doc-sig">— Tunku Abdul Rahman, Prime Minister of Malaysia</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ SECTION: DEBRIEF -->
+  <div class="section-divider"><span class="section-label">Post-Roleplay Debrief</span></div>
+  <h2>Debrief &amp; Discussion</h2>
+
+  <h3>Whole-Class Discussion Prompts</h3>
+  <div class="facilitator-box">
+    <div class="ftitle">🧑‍🏫 Facilitator Guide</div>
+    <p>Use these questions after all scenes are completed. Encourage learners to speak as themselves, not as their characters, and to reference specific moments from the roleplay.</p>
+    <ul style="margin-top:10px;">
+      <li>Before the Albatross File was declassified, many believed Singapore was <em>expelled</em> unilaterally. How does the file change that story? Why does it matter?</li>
+      <li>Which character did you find hardest to play or understand? Why?</li>
+      <li>Was the secrecy justified? What might have happened if Toh and Rajaratnam had known from the start?</li>
+      <li>Lee called it "a moment of anguish." Yet he still acted. What does this tell us about leadership during a national crisis?</li>
+      <li>Goh named his file "Albatross." By August 9th, has the albatross been released — or does it remain?</li>
+    </ul>
+  </div>
+
+  <h3>Written Reflection Tasks</h3>
+  <p>Choose <strong>one</strong> of the following for individual written work:</p>
+
+  <table class="assess">
+    <thead>
+      <tr><th>Task</th><th>Character / Perspective</th><th>Format</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Write a personal diary entry on the night of 9 August 1965.</td>
+        <td>Any character of your choice</td>
+        <td>Diary entry, 200–300 words</td>
+      </tr>
+      <tr>
+        <td>"The Albatross File proves that history is never simple." Discuss with reference to at least two characters.</td>
+        <td>Historian's perspective</td>
+        <td>Essay, 400–500 words</td>
+      </tr>
+      <tr>
+        <td>Write a letter from Toh Chin Chye to Lee Kuan Yew, written one week after signing. Does he forgive Lee? What does he want to say?</td>
+        <td>Toh Chin Chye</td>
+        <td>Letter, 250–350 words</td>
+      </tr>
+      <tr>
+        <td>Imagine you are a citizen of Singapore who has just watched Lee's tearful press conference. Write a letter to the Straits Times.</td>
+        <td>Ordinary citizen</td>
+        <td>Letter to editor, 200–250 words</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ═══════════════════════════════════════ SECTION: VOCABULARY -->
+  <div class="section-divider"><span class="section-label">Key Terms</span></div>
+  <h2>Vocabulary</h2>
+
+  <div class="vocab-grid">
+    <div class="vocab-item"><strong>Albatross</strong>From Coleridge's poem — a burden that cannot be shed. Goh's code name for Malaysia.</div>
+    <div class="vocab-item"><strong>Separation Agreement</strong>The legal document signed on 7 August 1965 that made Singapore's independence official.</div>
+    <div class="vocab-item"><strong>Fait accompli</strong>A French phrase meaning "already done" — something presented as finished before opposition can form.</div>
+    <div class="vocab-item"><strong>Malaysian Malaysia</strong>The PAP's campaign slogan for equal rights regardless of race — seen as threatening by UMNO.</div>
+    <div class="vocab-item"><strong>UMNO</strong>United Malays National Organisation — the dominant party of Malay political power in Malaysia.</div>
+    <div class="vocab-item"><strong>PAP</strong>People's Action Party — Lee Kuan Yew's party, which governed Singapore from 1959 onwards.</div>
+    <div class="vocab-item"><strong>Federation</strong>The combined political union of Malaya, Singapore, Sabah, and Sarawak formed in September 1963.</div>
+    <div class="vocab-item"><strong>Declassified</strong>When a government releases previously secret documents to the public — the Albatross File was fully declassified in 2025.</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ SECTION: ACCURACY NOTES -->
+  <div class="section-divider"><span class="section-label">Historical Accuracy Notes</span></div>
+  <h2>Script vs. Historical Record</h2>
+  <p style="font-size:14px; margin-bottom:16px;">This roleplay is grounded in the <strong>Albatross File: Inside Separation</strong> (National Archives of Singapore / Straits Times Press, 2025) — the primary source — and cross-checked against the National Archives of Singapore, Singapore government records (remembering.gov.sg), NLB BiblioAsia, Wikipedia, and academic sources. Key points of accuracy and dramatisation are listed below for educator reference.</p>
+
+  <div class="facilitator-box">
+    <div class="ftitle">✅ Historically Verified (Primary &amp; Credible Secondary Sources)</div>
+    <ul>
+      <li><strong>Lee's authorisation note (Scene 1):</strong> The wording matches the actual handwritten note in the Albatross File (NAS).</li>
+      <li><strong>Goh's motivation ("albatross" metaphor, Scene 1):</strong> Goh confirmed in his 1980 oral history interview that Malaysia had become "an albatross around our necks." His desire to "get out" is documented in his oral history: "I just wanted to get out. I could see no future in it." (NAS oral history, cited in Albatross File book, 2025).</li>
+      <li><strong>Scene 2 — setting and dynamic:</strong> Goh was summoned to Razak's home on 15 July 1965. Razak asked Goh for ideas to resolve the strained relationship. Goh proposed separation. (Albatross File book, 2025; Yahoo News / Straits Times account of book launch, Dec 2025; BiblioAsia, Apr–Jun 2026).</li>
+      <li><strong>Goh's documented words (Scene 2):</strong> "We leave Malaysia, become an independent state, and you'll be relieved of all these troubles… We're on our own, you're on your own." (Goh's oral history, cited in Albatross File book and Straits Times, Dec 2025).</li>
+      <li><strong>Fait accompli strategy (Scene 2):</strong> Both sides agreed the separation must be "done very quickly, very quietly, and presented as a fait accompli to the British." (Albatross File book, 2025).</li>
+      <li><strong>Toh and Rajaratnam kept in the dark (Scene 3):</strong> Confirmed by Albatross File book (2025), NLB article, Wikipedia, and multiple secondary sources. Setting: Temasek House, KL.</li>
+      <li><strong>Separation agreement signed before Toh/Rajaratnam were told (Scene 3):</strong> The agreement was signed in the early hours of 7 August by Goh, Barker, Razak, Ismail, Tan Siew Sin and Sambanthan — before Lee even summoned Toh and Rajaratnam. (Albatross File book; NLB article).</li>
+      <li><strong>Toh signed first, then Rajaratnam (Scene 3):</strong> Confirmed by multiple sources. Toh then wrote to Tunku accepting "the expulsion of Singapore from the Federation."</li>
+      <li><strong>Rajaratnam's feeling (Scene 3):</strong> "Signing away all that he had fought for" — confirmed by Medium/Separation: Declassified (Aug 2025), drawing on published accounts.</li>
+      <li><strong>Tunku's letter was to Toh (Scene 3):</strong> The Tunku wrote to Toh Chin Chye specifically, saying he was not strong enough to "exercise complete control of the situation." (Albatross File book; Wikipedia).</li>
+      <li><strong>Lee's press conference words (Scene 4):</strong> Verified against remembering.gov.sg (Singapore Government official site): "For me it is a moment of anguish because all my life… I have believed in merger and the unity of these two territories… Would you mind if we stop for a while?"</li>
+      <li><strong>Lee's closing words (Scene 4):</strong> Verified from NAS / Straits Times records: "This is not a Malay nation; this is not a Chinese nation; this is not an Indian nation. Everybody will have his place."</li>
+      <li><strong>Parliamentary vote:</strong> 126–0, with no PAP members present, at 9:30 a.m. on 9 August 1965. (Wikipedia; multiple sources).</li>
+      <li><strong>Rajaratnam's title:</strong> He was <em>Minister for Culture</em> from 1959 to 1965, then became Singapore's first <em>Minister for Foreign Affairs</em> from independence in 1965. His character card has been corrected to reflect this. (Wikipedia; roots.gov.sg; PAP.org.sg; RSIS).</li>
+    </ul>
+  </div>
+
+  <div class="facilitator-box" style="background:#FDF3DC; border-color:#C4A040;">
+    <div class="ftitle" style="color:#7A5A10;">✏️ Dramatised for Roleplay (What Is Invented)</div>
+    <ul>
+      <li><strong>Scene 1 — the "Albatross" naming conversation:</strong> No record exists of Lee and Goh discussing the file name together. The scene dramatises Goh's documented views and Lee's authorisation, but the dialogue is invented. The Albatross name is confirmed historically (Goh's 1980 interview).</li>
+      <li><strong>Scene 2 — Goh's exact words to Razak:</strong> Goh's general proposal is documented; the dialogue uses his verified phrasing from oral history records where available ("We're on our own, you're on your own"), with surrounding exchanges dramatised for clarity.</li>
+      <li><strong>Scene 3 — Lee's dialogue with Toh and Rajaratnam:</strong> The broad facts (refusal to sign, Tunku's letter, Lee's warning about bloodshed) are documented. The specific words spoken are dramatised.</li>
+      <li><strong>Scene 4 — Goh's private thoughts offstage:</strong> Invented as a dramatic device; Goh's documented feelings about wanting "to get out" of Malaysia are real, but no record places him physically offstage at the press conference.</li>
+      <li><strong>Tunku's letter wording:</strong> The prop document paraphrases the letter's documented content and intent; the exact original text of the letter to Toh has not been fully published in available sources.</li>
+    </ul>
+  </div>
+
+  <div class="facilitator-box" style="background:#E8F2E8; border-color:#5A9A5A;">
+    <div class="ftitle" style="color:#1A5A1A;">📚 Source Credibility Ratings Used</div>
+    <ul>
+      <li><strong>Primary (highest):</strong> Albatross File: Inside Separation (NAS / Straits Times Press, 2025); National Archives of Singapore transcripts; remembering.gov.sg (Singapore Government).</li>
+      <li><strong>High credibility:</strong> NLB BiblioAsia; Wikipedia (cross-referenced); roots.gov.sg; PAP.org.sg; RSIS; PMO.gov.sg.</li>
+      <li><strong>Used for background only:</strong> Yahoo News / Straits Times accounts of book launch; The Online Citizen (not used for specific facts after cross-checking revealed discrepancies with the Albatross File primary source).</li>
+    </ul>
+  </div>
+
+  <div class="doc-footer">
+    <em>The Albatross Must Fly — A Roleplay Scenario on Singapore's Separation from Malaysia, 1965</em><br>
+    Primary source: The Albatross File: Inside Separation (NAS / Straits Times Press, 2025) · Cross-checked against NAS, NLB, remembering.gov.sg, roots.gov.sg, BiblioAsia<br>
+    For educational use only · All dialogue is dramatised; verified quotes drawn from the National Archives of Singapore and official Singapore government records
+  </div>
+
+</div>
+</body>
+</html>
